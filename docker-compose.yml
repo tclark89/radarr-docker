@@ -10,7 +10,7 @@ services:
     volumes:
       - ./config:/config
       - /mnt/public/Videos/:/videos 
-      - /mnt/RAID/tyler/videos/MakeMKV:/makemkv 
+      - /mnt/tyler/videos/MakeMKV:/makemkv 
     #ports:
       #- 7878:7878
     restart: unless-stopped
