@@ -25,3 +25,5 @@ volumes:
 networks:
   default:
     name: radarr_swarm
+    driver: overlay
+    attachable: true
