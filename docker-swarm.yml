@@ -7,23 +7,9 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - config:/config
-            #- ./config:/config
+      - ./config:/config
       - /mnt/public/Videos/:/videos 
       - /mnt/tyler/videos/MakeMKV:/makemkv 
-    #ports:
-      #- 7878:7878
+    ports:
+      - 7878:7878
 
-volumes:
-  config:
-    driver_opts:
-      type: "nfs"
-      o: "addr=192.168.0.2,rw,vers=4.1"
-      device: ":/srv/docker/radarr/config/"
-
-
-networks:
-  default:
-    name: radarr_swarm
-    driver: overlay
-    attachable: true
