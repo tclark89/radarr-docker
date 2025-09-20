@@ -17,5 +17,5 @@ services:
 
 networks:
   default:
-    attachable: true
-    name: radarr
+    external: true
+    name: frontend
