@@ -12,8 +12,11 @@ services:
       - ./config:/config
       - /mnt/public/Videos/:/videos 
       - /mnt/tyler/videos/MakeMKV:/makemkv 
-        #ports:
-        #- 7878:7878
+    labels: 
+      - traefik.enable=true
+      - traefik.http.routers.radarr.rule=Host(`radarr.tyler-clark.com`)
+      - traefik.http.routers.radarr.tls=true
+      - traefik.http.routers.radarr.tls.certresolver=cloudflare
 
 networks:
   default:
